@@ -6,6 +6,11 @@
     font-family: system-ui, Arial, sans-serif;
 }
 
+/* BACKGROUND GLOBAL */
+html, body {
+    height: 100%;
+}
+
 /* BACKGROUND */
 body {
     min-height: 100vh;
@@ -13,7 +18,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: url("/O-Ultimo-Cavaleiro/img/cenarios/background-cadastro.png") no-repeat center center/cover;
+    /* CORREÇÃO PRINCIPAL */
+    background: url("../img/cenarios/background-cadastro.png") no-repeat center center/cover;
+
     color: #e6e6e6;
 }
 
@@ -28,7 +35,7 @@ body {
 
     padding: 30px;
 
-    background: rgba(10, 10, 12, 0.253);
+    background: rgba(10, 10, 12, 0.35);
 }
 
 /* CARD */
@@ -135,6 +142,7 @@ a:hover {
     color: #FFD700;
 }
 
+/* ALERTA */
 #msgAlert {
     min-height: 22px;
 
@@ -146,9 +154,6 @@ a:hover {
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    color: #FFD700;
-
-    transition: .25s;
 }
 
 /* RESPONSIVO */
