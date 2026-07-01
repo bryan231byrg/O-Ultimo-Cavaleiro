@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+
+    <div id="container">
+      <main>
+
+        <h1>Login</h1>
+
+        <form id="form-login">
+
+          <label for="iptEmail">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            id="iptEmail"
+            placeholder="Digite seu E-mail" />
+
+          <label for="iptSenha">Senha:</label>
+          <input
+            type="password"
+            name="senha"
+            id="iptSenha"
+            placeholder="Digite sua Senha" />
+
+          <button type="submit">Login</button>
+          <a href="./cadastro.html">Não tem uma conta? Registre-se</a>
+
+          <p id="msgAlert"></p>
+
+
+        </form>
+      </main>
+    </div>
+  </body>
+  <script src="../JS/login.js"></script>
+</html>
