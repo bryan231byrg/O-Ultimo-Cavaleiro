@@ -183,7 +183,7 @@ function vencer() {
         setFase(fase);
 
         window.location.href =
-            window.location.origin + "/pages/fases/fase" + fase + ".html";
+            window.location.origin + "/O-Ultimo-Cavaleiro/pages/fases/fase" + fase + ".html";
     }, 1000);
 }
 
