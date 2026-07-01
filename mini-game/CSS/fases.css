@@ -1,0 +1,302 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+    --gold: #FFD700;
+    --gold-soft: #E6C068;
+    --red: #ff4d4d;
+    --red-dark: #B22222;
+    --purple: #7a5cff;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, Arial, sans-serif;
+}
+
+/* =========================
+   LAYOUT BASE
+========================= */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+#container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(0,0,0,0.55);
+}
+
+/* =========================
+   HUD
+========================= */
+#topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 15px;
+    background: rgba(20, 20, 20, 0.85);
+
+    border-bottom: 2px solid var(--gold-soft);
+}
+
+#topo h1 {
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   STATUS PLAYER
+========================= */
+#status-player {
+    display: flex;
+    gap: 12px;
+}
+
+.status {
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    background: rgba(0,0,0,0.75);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    font-size: 12px;
+    min-width: 80px;
+    text-align: center;
+
+    color: #fff;
+}
+
+.status strong {
+    display: block;
+    font-size: 13px;
+}
+
+#vida strong { color: var(--red); }
+
+/* =========================
+   HISTÓRIA
+========================= */
+#historia {
+    margin: 10px auto;
+    width: 90%;
+    max-width: 700px;
+
+    padding: 12px;
+
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--gold-soft);
+    border-radius: 6px;
+
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* =========================
+   ARENA
+========================= */
+#campoBatalha {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+}
+
+#player,
+#enemy {
+    width: 35%;
+    text-align: center;
+    color: #fff;
+}
+
+#player img,
+#enemy img {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    image-rendering: pixelated;
+}
+
+#vs {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+/* =========================
+   BOTÃO
+========================= */
+#combate {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(20, 20, 20, 0.9);
+    border-top: 2px solid var(--gold-soft);
+}
+
+#btnAtacar {
+    padding: 12px 40px;
+
+    background: #1c1c1c;
+    color: #fff;
+
+    border: 2px solid var(--gold-soft);
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#btnAtacar:hover {
+    background: #2a2a2a;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   LOG
+========================= */
+#log {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+
+    width: 300px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--gold-soft);
+    border-radius: 6px;
+
+    padding: 10px;
+
+    font-size: 13px;
+    color: #fff;
+}
+
+#logMensagens p {
+    margin-bottom: 5px;
+}
+
+/* =========================
+   BACKGROUNDS
+========================= */
+body.fase1 {
+    background: url("../img/cenarios/background-floresta-sombria.png") no-repeat center center/cover;
+}
+
+body.fase2 {
+    background: url("../img/cenarios/background-cidade-ruinas.png") no-repeat center center/cover;
+}
+
+body.fase3 {
+    background: url("../img/cenarios/background-castelo-ruinas.png") no-repeat center center/cover;
+}
+
+body.faseFinal {
+    background: url("../img/cenarios/background-reino-valora.png") no-repeat center center/cover;
+}
+
+/* =========================
+   FASE FINAL (DIFERENCIAL)
+========================= */
+body.faseFinal {
+    overflow: hidden;
+}
+
+body.faseFinal::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+    z-index: 0;
+}
+
+body.faseFinal #container {
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+}
+
+body.faseFinal #topo h1 {
+    font-size: 28px;
+    text-shadow: 0 0 20px var(--gold);
+}
+
+body.faseFinal #historia {
+    font-size: 16px;
+    line-height: 1.7;
+    animation: fadeInFinal 2s ease-in-out;
+    box-shadow: 0 0 30px rgba(255,215,0,0.1);
+}
+
+body.faseFinal #vs {
+    font-size: 60px;
+    text-shadow: 0 0 25px var(--gold);
+}
+
+body.faseFinal #btnAtacar {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
+body.faseFinal #btnAtacar:hover {
+    background: rgba(255,215,0,0.15);
+    transform: scale(1.05);
+}
+
+/* =========================
+   ANIMAÇÃO FINAL
+========================= */
+@keyframes fadeInFinal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+    #campoBatalha {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #player,
+    #enemy {
+        width: 100%;
+    }
+
+    #log {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
